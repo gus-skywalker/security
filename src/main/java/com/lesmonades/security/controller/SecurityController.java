@@ -6,16 +6,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/oauth2")
 public class SecurityController {
 
-    @GetMapping
-    public String getUser() {
-        return "O escolhido foi você. Salame migue";
+    @GetMapping("/")
+    public String home() {
+        return "Home - O escolhido foi você. Salame migue";
     }
 
-    @PostMapping
-    public String postUser() {
-        return "Eu to funcionando!";
+    @PostMapping("/secured")
+    public String secured() {
+        return "Eu to funcionando de forma segura!";
     }
 }
