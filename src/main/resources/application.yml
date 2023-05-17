@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: security
+
+server:
+  port: 2222
+
+security:
+  oauth2:
+    client:
+      client-id: first-client
+      client-secret: noonewilleverguess
