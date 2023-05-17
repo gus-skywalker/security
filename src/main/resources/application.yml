@@ -8,8 +8,8 @@ spring:
       client:
         registration:
             github:
-              client-id: d35a8bf4be491ea6ade2
-              client-secret: 1905e1f9f306c4ee0a29e56141b5f3b6e308a9ab
+              clientId: d35a8bf4be491ea6ade2
+              clientSecret: 1905e1f9f306c4ee0a29e56141b5f3b6e308a9ab
   #            scope:
   #              - email
   #              - profile
@@ -18,9 +18,10 @@ spring:
   #spring.security.oauth2.client.registration.google.client-id=GOOGLE_CLIENT_ID
   #spring.security.oauth2.client.registration.google.client-secret=GOOGLE_CLIENT_SECRET
 
-server.port: 2222
+server:
+  port: 2222
 
 logging:
   level:
     org.springframework.security: TRACE
-
+    org.springframework.security.oauth2: TRACE

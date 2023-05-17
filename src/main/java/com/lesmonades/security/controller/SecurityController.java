@@ -2,7 +2,6 @@ package com.lesmonades.security.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -13,7 +12,7 @@ public class SecurityController {
         return "Home - O escolhido foi você. Salame migue";
     }
 
-    @PostMapping("/secured")
+    @GetMapping("/secured")
     public String secured() {
         return "Eu to funcionando de forma segura!";
     }
