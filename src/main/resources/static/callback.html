@@ -1,0 +1,16 @@
+<!doctype html>
+<body>
+<h1 id="title">Callback</h1>
+<button><a href="/">Home</a></button>
+<button><a href="/profile.html">Profile</a></button>
+<script>
+  (async () => {
+    const backend = 'http://localhost:2222';
+    const response = await fetch(`${backend}/oauth2/callback/github${location.search}`);
+
+    const titleElement = document.getElementById('title');
+    titleElement.innerText += ` ${await response.text()}`;
+    titleElement.style.color = (response.status === 200) ? 'green' : 'red';
+  })();
+</script>
+</body>

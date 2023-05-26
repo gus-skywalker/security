@@ -4,6 +4,9 @@ import lombok.Data;
 import lombok.experimental.Accessors;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
+import org.springframework.security.oauth2.core.OAuth2AuthenticationException;
+import org.springframework.security.oauth2.core.oidc.user.DefaultOidcUser;
+import org.springframework.security.oauth2.core.oidc.user.OidcUser;
 
 public class AuthenticationHelper {
 
@@ -19,9 +22,11 @@ public class AuthenticationHelper {
         }
     }
 
-    public static String retrieveAccountId(Authentication authentication) {
-        Details details = (Details) authentication.getDetails();
-        return details.getAccountId();
+    public static String retrieveAccountId(Authentication authentication) throws OAuth2AuthenticationException {
+        //Details details = (Details) authentication.getDetails();
+        //return details.getAccountId();
+        DefaultOidcUser oidcUser = (DefaultOidcUser) authentication.getPrincipal();
+        return oidcUser.getAttribute("name");
     }
 
     @Data
