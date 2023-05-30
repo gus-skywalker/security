@@ -15,9 +15,12 @@ import org.springframework.security.oauth2.client.OAuth2AuthorizedClient;
 import org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter;
 import org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter;
 import org.springframework.security.oauth2.core.oidc.user.DefaultOidcUser;
+import org.springframework.security.oauth2.core.user.DefaultOAuth2User;
 import org.springframework.stereotype.Controller;
 
 import java.time.Duration;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
 
 @Controller
@@ -59,10 +62,16 @@ public class OAuthController {
     @SneakyThrows
     public void oauthSuccessCallback(OAuth2AuthorizedClient client, Authentication authentication) {
         // You can grab the access + refresh tokens as well via the "client"
+        Map<String, Object> socialUserInfo = new HashMap<>();
+        if(client.getClientRegistration().getRegistrationId().equals("github")) {
+            socialUserInfo.putAll(((DefaultOAuth2User) authentication.getPrincipal()).getAttributes());
+        } else {
+            socialUserInfo.putAll(((DefaultOidcUser) authentication.getPrincipal()).getClaims()); // Other Social Logins
+        }
         UUID accountId = this.accountService.findOrRegisterAccount(
                 authentication.getName(),
                 authentication.getName().split("\\|")[0],
-                ((DefaultOidcUser) authentication.getPrincipal()).getClaims()
+                socialUserInfo
         );
         AuthenticationHelper.attachAccountId(authentication, accountId.toString());
     }

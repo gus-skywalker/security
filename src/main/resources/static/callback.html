@@ -5,8 +5,8 @@
 <button><a href="/profile.html">Profile</a></button>
 <script>
   (async () => {
-    const backend = 'http://localhost:2222';
-    const response = await fetch(`${backend}/oauth2/callback/github${location.search}`);
+    const backend = 'http://localhost:8082';
+    const response = await fetch(`${backend}/oauth2/callback/kitchen-client-oidc${location.search}`);
 
     const titleElement = document.getElementById('title');
     titleElement.innerText += ` ${await response.text()}`;

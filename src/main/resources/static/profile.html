@@ -4,7 +4,7 @@
 <button><a href="/">Home</a></button>
 <script>
     (async () => {
-        const backend = 'http://localhost:2222';
+        const backend = 'http://localhost:8082';
         const {session} = await (await fetch(`${backend}/info`)).json();
 
         const titleElement = document.getElementById('title');

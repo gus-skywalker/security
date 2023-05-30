@@ -12,4 +12,14 @@ public class UserController {
     public Principal user(Principal principal) {
         return principal;
     }
+
+    @GetMapping("/")
+    public String home() {
+        return "Home - O escolhido foi você. Salame migue";
+    }
+
+    @GetMapping("/secured")
+    public String secured() {
+        return "Eu to funcionando de forma segura!";
+    }
 }

@@ -23,10 +23,10 @@ public class AuthenticationHelper {
     }
 
     public static String retrieveAccountId(Authentication authentication) throws OAuth2AuthenticationException {
-        //Details details = (Details) authentication.getDetails();
-        //return details.getAccountId();
-        DefaultOidcUser oidcUser = (DefaultOidcUser) authentication.getPrincipal();
-        return oidcUser.getAttribute("name");
+        Details details = (Details) authentication.getDetails();
+        return details.getAccountId();
+//        DefaultOidcUser oidcUser = (DefaultOidcUser) authentication.getPrincipal(); // Used for other Social Logins besides GitHub
+        // oidcUser.getAttribute("name");
     }
 
     @Data

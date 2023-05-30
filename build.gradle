@@ -16,20 +16,27 @@ configurations {
 
 repositories {
     mavenCentral()
+    maven { url "https://repo.spring.io/milestone" }
 }
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation "org.springframework.boot:spring-boot-starter-security"
     implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
-    //implementation 'org.springframework.security:spring-security-oauth2-authorization-server:1.1.0'
+    implementation 'org.springframework.security:spring-security-oauth2-authorization-server:1.1.0'
     implementation 'org.springframework.boot:spring-boot'
     implementation 'com.nimbusds:nimbus-jose-jwt'
+    implementation 'org.springframework:spring-webflux:6.0.4'
+    implementation 'io.projectreactor.netty:reactor-netty-core:1.1.2'
     compileOnly 'org.projectlombok:lombok'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
     annotationProcessor 'org.projectlombok:lombok'
+
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.security:spring-security-test'
+    testImplementation "org.junit.jupiter:junit-jupiter"
+    testImplementation "net.sourceforge.htmlunit:htmlunit"
 }
 
 tasks.named('test') {

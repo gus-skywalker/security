@@ -4,9 +4,10 @@
 <button><a href="/profile.html">Profile</a></button>
 <button id="google-oauth2">Log in with Google</button>
 <button id="github">Log in with GitHub</button>
+<button id="oidc-client">Log in with Oidc-Client</button>
 <script>
-    const backend = 'http://localhost:2222';
-    ['google-oauth2', 'github'].forEach(provider => document.getElementById(provider).addEventListener('click', async () => {
+    const backend = 'http://localhost:8082';
+    ['google-oauth2', 'github', 'oidc-client'].forEach(provider => document.getElementById(provider).addEventListener('click', async () => {
         const {redirectUrl} = await (await fetch(`${backend}/oauth2/authorization/${provider}`)).json();
         location.replace(redirectUrl);
     }));

@@ -1,3 +1,6 @@
+server:
+  port: 8082
+
 spring:
   application:
     name: security
@@ -10,7 +13,7 @@ spring:
             github:
               clientId: d35a8bf4be491ea6ade2
               clientSecret: 1905e1f9f306c4ee0a29e56141b5f3b6e308a9ab
-              redirect-uri: http://localhost:2222/callback.html
+              redirect-uri: http://localhost:8082/callback.html
               scope:
                 - email
                 - profile
@@ -19,10 +22,29 @@ spring:
   #spring.security.oauth2.client.registration.google.client-id=GOOGLE_CLIENT_ID
   #spring.security.oauth2.client.registration.google.client-secret=GOOGLE_CLIENT_SECRET
 
-server:
-  port: 2222
+#            kitchen-client-oidc:
+#              provider: spring
+#              client-id: kitchen-client1
+#              client-secret: secret1
+#              authorization-grant-type: authorization_code
+#              redirect-uri: "http://127.0.0.1:8082/login/oauth2/code/{registration_Id}"
+#              scope: openid, profile
+#              client-name: kitchen-client-oidc
+#            kitchen-client-authorization-code:
+#              provider: spring
+#              client-id: kitchen-client2
+#              client-secret: secret2
+#              authorization-grant-type: authorization_code
+#              redirect-uri: "http://127.0.0.1:8082/callback.html"
+#              scope: user.read
+#              client-name: kitchen-client-authorization-code
+#        provider:
+#          spring:
+#            issuer-uri: http://localhost:9000
 
 logging:
   level:
-    org.springframework.security: TRACE
-    org.springframework.security.oauth2: TRACE
+    root: info
+    org.springframework.web: info
+    org.springframework.security: trace
+    org.springframework.security.oauth2: info
