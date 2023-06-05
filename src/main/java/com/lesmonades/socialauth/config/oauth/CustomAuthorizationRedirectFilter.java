@@ -1,6 +1,6 @@
-package com.lesmonades.security.config.oauth;
+package com.lesmonades.socialauth.config.oauth;
 
-import com.lesmonades.security.controller.OAuthController;
+import com.lesmonades.socialauth.controller.OAuthController;
 import lombok.SneakyThrows;
 import org.springframework.security.oauth2.client.web.AuthorizationRequestRepository;
 import org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter;

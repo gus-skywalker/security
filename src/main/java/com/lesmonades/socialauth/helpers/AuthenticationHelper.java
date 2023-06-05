@@ -1,12 +1,10 @@
-package com.lesmonades.security.helpers;
+package com.lesmonades.socialauth.helpers;
 
 import lombok.Data;
 import lombok.experimental.Accessors;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
 import org.springframework.security.oauth2.core.OAuth2AuthenticationException;
-import org.springframework.security.oauth2.core.oidc.user.DefaultOidcUser;
-import org.springframework.security.oauth2.core.oidc.user.OidcUser;
 
 public class AuthenticationHelper {
 

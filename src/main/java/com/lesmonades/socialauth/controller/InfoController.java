@@ -1,4 +1,4 @@
-package com.lesmonades.security.controller;
+package com.lesmonades.socialauth.controller;
 
 import lombok.Data;
 import lombok.experimental.Accessors;
@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import static com.lesmonades.security.controller.OAuthController.SESSION_COOKIE_NAME;
+import static com.lesmonades.socialauth.controller.OAuthController.SESSION_COOKIE_NAME;
 
 
 @RestController

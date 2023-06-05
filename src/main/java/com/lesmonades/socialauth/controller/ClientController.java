@@ -1,4 +1,4 @@
-package com.lesmonades.security.controller;
+package com.lesmonades.socialauth.controller;
 
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.oauth2.client.OAuth2AuthorizedClient;
@@ -36,7 +36,7 @@ public class ClientController {
 
     @GetMapping("tasks")
     public Mono<String> getTasks(
-            @RegisteredOAuth2AuthorizedClient("kitchen-client") OAuth2AuthorizedClient client) {
+            @RegisteredOAuth2AuthorizedClient("1") OAuth2AuthorizedClient client) {
         return webClient
                 .get()
                 .uri("/tasks")

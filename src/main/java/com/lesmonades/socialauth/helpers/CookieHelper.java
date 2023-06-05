@@ -1,4 +1,4 @@
-package com.lesmonades.security.helpers;
+package com.lesmonades.socialauth.helpers;
 
 import jakarta.servlet.http.Cookie;
 import lombok.NonNull;

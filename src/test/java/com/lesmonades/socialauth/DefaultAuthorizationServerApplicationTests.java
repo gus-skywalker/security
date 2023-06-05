@@ -1,4 +1,4 @@
-package com.lesmonades.security;
+package com.lesmonades.socialauth;
 /*
  * Copyright 2020-2022 the original author or authors.
  *

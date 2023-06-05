@@ -1,8 +1,8 @@
-package com.lesmonades.security.controller;
+package com.lesmonades.socialauth.controller;
 
-import com.lesmonades.security.helpers.AuthenticationHelper;
-import com.lesmonades.security.helpers.CookieHelper;
-import com.lesmonades.security.service.AccountService;
+import com.lesmonades.socialauth.helpers.AuthenticationHelper;
+import com.lesmonades.socialauth.helpers.CookieHelper;
+import com.lesmonades.socialauth.service.AccountService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.AllArgsConstructor;

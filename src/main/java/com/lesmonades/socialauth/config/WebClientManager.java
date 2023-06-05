@@ -1,5 +1,4 @@
-/*
-package com.lesmonades.security.config;
+package com.lesmonades.socialauth.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -43,4 +42,3 @@ public class WebClientManager {
 
 
 }
-*/

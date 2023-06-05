@@ -1,4 +1,4 @@
-package com.lesmonades.security.service;
+package com.lesmonades.socialauth.service;
 
 import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;

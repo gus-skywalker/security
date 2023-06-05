@@ -11,8 +11,8 @@ spring:
       client:
         registration:
             github:
-              clientId: d35a8bf4be491ea6ade2
-              clientSecret: 1905e1f9f306c4ee0a29e56141b5f3b6e308a9ab
+              clientId: 
+              clientSecret: 
               redirect-uri: http://localhost:8082/callback.html
               scope:
                 - email

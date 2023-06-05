@@ -1,6 +1,6 @@
-package com.lesmonades.security.config.oauth;
+package com.lesmonades.socialauth.config.oauth;
 
-import com.lesmonades.security.controller.OAuthController;
+import com.lesmonades.socialauth.controller.OAuthController;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.security.oauth2.client.registration.ClientRegistrationRepository;
 import org.springframework.security.oauth2.client.web.DefaultOAuth2AuthorizationRequestResolver;

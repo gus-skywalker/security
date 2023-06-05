@@ -1,4 +1,4 @@
-package com.lesmonades.security;
+package com.lesmonades.socialauth;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
